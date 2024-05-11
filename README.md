@@ -17,7 +17,7 @@ Follow the instructions below to install the project versions.
 
 # Repository
 
-`git clone `
+`git clone https://github.com/byronlml/ScreenPlay-Automation.git`
 
 # Run project
 ./gradlew test --tests "co.com.screenplay.project.runners.RunnerSubscription"
