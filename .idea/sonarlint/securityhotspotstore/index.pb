@@ -40,3 +40,5 @@ Usrc/main/java/co/com/screenplay/project/tasks/FuntionNextCompanySubscriptionTas
 Vsrc/main/java/co/com/screenplay/project/tasks/FuntionSuccessfullySubscriptionTask.java,b\a\bad4b0864f918daf168c03e86fc5feaf85a6f200
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+?
+settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233

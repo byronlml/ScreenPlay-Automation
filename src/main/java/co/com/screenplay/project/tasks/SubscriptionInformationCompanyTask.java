@@ -12,7 +12,6 @@ import net.thucydides.core.util.EnvironmentVariables;
 
 import static co.com.screenplay.project.helper.Constants.TIME_SHORT;
 import static co.com.screenplay.project.ui.SubscriptionInformationCompanyUI.*;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 @Slf4j

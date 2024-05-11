@@ -25,4 +25,5 @@ Feature: Create subscription
     | Alexis     | Granja     | byorozcogranja@outlook. | hola       |
     | 15dgt522   | ******     | eyorozcnja@gmail.com    | 2          |
     | ñaño       | thela{/)   | eyorozcnja@hotmail.com  | .....      |
+    | test       | infor      |                         | 4fv45r65f8 |
     | Alejandra  | Lopez      | Alejandra@hotmail.com   | 3069884488 |
