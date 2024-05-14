@@ -1,11 +1,9 @@
 package co.com.screenplay.project.tasks;
 
-import lombok.AllArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
-import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
@@ -16,16 +14,14 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisi
 
 public class FunctionValidateMessages implements Task {
 
-    private static final int minLength = 1;
-    private static final int maxLength = 50;
-
-    //Enter.theValue(firstName).into(FIRST_NAME_ELEMENT)
+    private static final int MIN_NAME_LENGTH  = 1;
+    private static final int MAX_NAME_LENGTH  = 50;
 
     @Override
     public <T extends Actor> void performAs(T actor) {
 
         String firstNameValidation = FIRST_NAME_ELEMENT.resolveFor(actor).getText();
-        if (firstNameValidation.length() < minLength || firstNameValidation.length() > maxLength) {
+        if (firstNameValidation.length() < MIN_NAME_LENGTH  || firstNameValidation.length() > MAX_NAME_LENGTH ) {
             actor.attemptsTo(WaitUntil.the(MESSAGE_VALIDATION_NAME_ELEMENT, isVisible())
                             .forNoMoreThan(TIME_SHORT).seconds(),
                     Ensure.that(MESSAGE_VALIDATION_NAME_ELEMENT).text().isEqualTo(VALIDATE_MESSAGE_NAME));
