@@ -10,8 +10,8 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "co.com.screenplay.project.stepdefinitions",
         snippets = CucumberOptions.SnippetType.CAMELCASE,
-        //if you want to run all scenarios you can include tag or comment tag line
-        tags = "@SubscriptionOutline"
+        //if you want to run all scenarios you can include tag or comment tag line SubscriptionOutline
+        tags = "@SubscriptionMessage"
 )
 public class RunnerSubscription {
 }

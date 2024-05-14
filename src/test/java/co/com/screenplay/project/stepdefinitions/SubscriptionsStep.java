@@ -31,7 +31,7 @@ public class SubscriptionsStep {
 
     @When("Select the Free trial package")
     public void selectTheFreeTrialPackage() {
-        theActorCalled(ACTOR).attemptsTo(FuntionSelectSubscriptionTask.choose());
+        theActorCalled(ACTOR).attemptsTo(FunctionSelectSubscriptionTask.choose());
 
     }
     //Option 1 to use the data
@@ -43,10 +43,22 @@ public class SubscriptionsStep {
 
     }
 
+    @When("Verify if Next button is disabled")
+    public void VerifyIfNextButtonIsDisabled() {
+        theActorCalled(ACTOR).attemptsTo(FunctionValidateNextButtonTask.validate());
+    }
+
+    @When("Check for validation messages")
+    public void CheckForValidationMessages() {
+        theActorCalled(ACTOR).attemptsTo(
+                FunctionValidateMessages.validateMessages());
+    }
+
     @When("Click on next button")
     public void clickOnNextButton() {
         theActorCalled(ACTOR).attemptsTo(FuntionNextSubscriptionTask.select());
     }
+
     //Option 2 to use the data
     @When("Fill in the company information")
     public void fillInTheCompanyInformation() {
@@ -62,12 +74,12 @@ public class SubscriptionsStep {
 
     @When("Click on second next button")
     public void clickOnNextSecondButton() {
-        theActorCalled(ACTOR).attemptsTo(FuntionNextCompanySubscriptionTask.next());
+        theActorCalled(ACTOR).attemptsTo(FunctionValidateNextButtonTask.validate());
     }
 
     @Then("Should display the message satisfactory")
     public void shouldDisplayTheMessageSatisfactory() {
-        theActorCalled(ACTOR).attemptsTo(FuntionSuccessfullySubscriptionTask.success());
+        theActorCalled(ACTOR).attemptsTo(FunctionSuccessfullySubscriptionTask.success());
 
     }
 

@@ -42,3 +42,13 @@ Vsrc/main/java/co/com/screenplay/project/tasks/FuntionSuccessfullySubscriptionTa
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 ?
 settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
+|
+Lsrc/main/java/co/com/screenplay/project/tasks/FuntionValidateNextButton.java,e\7\e762944912d8c2454a52c3271cfcc38d460455cc
+Ä
+Psrc/main/java/co/com/screenplay/project/tasks/FuntionValidateNextButtonTask.java,f\d\fd0f508e297c335d1f6d23c91bab189fd78279f0
+{
+Ksrc/main/java/co/com/screenplay/project/tasks/FunctionValidateMessages.java,5\3\5374160990c3d1faa2709fe8f4965f3dde298192
+á
+Wsrc/main/java/co/com/screenplay/project/tasks/FunctionSuccessfullySubscriptionTask.java,f\3\f38ca58b582b163fe1b46c3b5752a07c74ada39f
+Å
+Qsrc/main/java/co/com/screenplay/project/tasks/FunctionValidateNextButtonTask.java,3\1\310f015be655e1978e9c83dca1299e530759a497

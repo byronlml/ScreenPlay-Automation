@@ -20,5 +20,5 @@ public class SubscriptionBasicInformationUI extends PageObject {
 
     public static final Target NEXT_ELEMENT = Target.the("Next Button").located(By.xpath("//div[@class=\"ant-form-item-control-input ng-tns-c61-4\"]//button[@class=\"ant-btn ml-10 width-47 ng-tns-c61-4 ant-btn-primary ant-btn-round ant-btn-lg\"]"));
 
-
+    public static final Target MESSAGE_VALIDATION_NAME_ELEMENT = Target.the("Validate first name message").located(By.xpath("/html/body/app-root/open/enroller/div/div[2]/div[2]/enroller-form/form/div[1]/div[1]/div[1]/nz-form-item/nz-form-control/div[2]/div"));
 }

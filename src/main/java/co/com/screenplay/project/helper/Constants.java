@@ -21,5 +21,7 @@ public class Constants {
     public static final String CITY_NAME = "generalData.companyInformation.company.city";
     public static final String STATE_NAME = "generalData.companyInformation.company.state";
 
+    public static final String VALIDATE_MESSAGE_NAME = "The input is not valid name or exceeds 50 characters";
+
 
 }

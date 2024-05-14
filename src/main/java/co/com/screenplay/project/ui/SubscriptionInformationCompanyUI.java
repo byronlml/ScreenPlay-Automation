@@ -31,4 +31,5 @@ public class SubscriptionInformationCompanyUI extends PageObject {
 
     public static final Target SUCCESSFULLY_ELEMENT = Target.the("successfully message").located(By.xpath("//div[@class='ant-card-meta-title ng-star-inserted']"));
 
+
 }

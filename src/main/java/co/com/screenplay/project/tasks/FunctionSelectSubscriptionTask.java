@@ -8,19 +8,20 @@ import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.screenplay.project.helper.Constants.TIME_SHORT;
-import static co.com.screenplay.project.ui.SubscriptionInformationCompanyUI.NEXT_BUTTON_ELEMENT;
+import static co.com.screenplay.project.ui.SubscriptionBasicInformationUI.*;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isEnabled;
 
-public class FuntionNextCompanySubscriptionTask implements Task {
+public class FunctionSelectSubscriptionTask implements Task {
+
     @Override
     public <T extends Actor> void performAs(T actor){
-        actor.attemptsTo(Scroll.to(NEXT_BUTTON_ELEMENT));
-        actor.attemptsTo(WaitUntil.the(NEXT_BUTTON_ELEMENT, isEnabled())
+        actor.attemptsTo(Scroll.to(START_NOW_ELEMENT));
+        actor.attemptsTo(WaitUntil.the(START_NOW_ELEMENT, isEnabled())
                         .forNoMoreThan(TIME_SHORT).seconds(),
-                Click.on(NEXT_BUTTON_ELEMENT));
+                Click.on(START_NOW_ELEMENT));
     }
 
-    public static FuntionNextCompanySubscriptionTask next(){
-        return Tasks.instrumented(FuntionNextCompanySubscriptionTask.class);
+    public static FunctionSelectSubscriptionTask choose(){
+        return Tasks.instrumented(FunctionSelectSubscriptionTask.class);
     }
 }

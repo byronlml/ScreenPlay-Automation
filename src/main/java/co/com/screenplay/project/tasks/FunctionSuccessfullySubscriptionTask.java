@@ -12,7 +12,7 @@ import static co.com.screenplay.project.helper.Waits.waiting;
 import static co.com.screenplay.project.ui.SubscriptionInformationCompanyUI.SUCCESSFULLY_ELEMENT;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
-public class FuntionSuccessfullySubscriptionTask implements Task {
+public class FunctionSuccessfullySubscriptionTask implements Task {
     @Override
     public <T extends Actor> void performAs(T actor){
         waiting(TIME_SHORT);
@@ -22,7 +22,7 @@ public class FuntionSuccessfullySubscriptionTask implements Task {
         );
     }
 
-    public static FuntionSuccessfullySubscriptionTask success(){
-        return Tasks.instrumented(FuntionSuccessfullySubscriptionTask.class);
+    public static FunctionSuccessfullySubscriptionTask success(){
+        return Tasks.instrumented(FunctionSuccessfullySubscriptionTask.class);
     }
 }
