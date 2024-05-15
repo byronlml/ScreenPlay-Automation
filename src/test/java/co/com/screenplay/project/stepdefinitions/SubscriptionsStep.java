@@ -74,7 +74,7 @@ public class SubscriptionsStep {
 
     @When("Click on second next button")
     public void clickOnNextSecondButton() {
-        theActorCalled(ACTOR).attemptsTo(FunctionValidateNextButtonTask.validate());
+        theActorCalled(ACTOR).attemptsTo(FunctionNextCompanySubscriptionTask.next());
     }
 
     @Then("Should display the message satisfactory")
