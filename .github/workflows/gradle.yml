@@ -38,10 +38,10 @@ jobs:
     # Grant execute permissions to gradlew script
     - name: Grant execute permissions
       run: chmod +x gradlew
-      
-    # Run Gradle tests
-    - name: Run Tests with Gradle
-      run: ./gradlew test
+
+    # Run Gradle tests using the pre-built Docker image
+    - name: Run Tests with Gradle (Edge Docker)
+      run: docker run -d -p 4444:4444 selenium/edge-chromium:latest && ./gradlew test
 
     # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
     # If your project does not have the Gradle Wrapper configured, you can use the following configuration to run Gradle with a specified version.
