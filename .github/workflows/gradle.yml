@@ -41,20 +41,18 @@ jobs:
 
     # Install Edge browser
     - name: Install Edge and EdgeDriver
+      uses: browser-actions/setup-edge@v1
+      with:
+        edge-version: 'stable'  # Puedes cambiar 'beta' a 'stable' si prefieres la versión estable
+
+    - name: Print Edge version
       run: |
-        sudo apt-get update
-        sudo apt-get install -y software-properties-common apt-transport-https wget unzip
-        wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
-        sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main"
-        sudo apt-get update
-        sudo apt-get install -y microsoft-edge-stable
-        EDGE_VERSION=$(microsoft-edge --version | grep -oP '\d+\.\d+\.\d+\.\d+')
-        echo "Installed Edge version: $EDGE_VERSION"
-        EDGE_DRIVER_VERSION=$(curl -s "https://msedgedriver.azureedge.net/LATEST_RELEASE_${EDGE_VERSION%.*}")
-        wget "https://msedgedriver.azureedge.net/${EDGE_DRIVER_VERSION}/edgedriver_linux64.zip" -O edgedriver_linux64.zip
-        unzip edgedriver_linux64.zip -d /usr/local/bin/
-        rm edgedriver_linux64.zip
-        sudo mv /usr/local/bin/msedgedriver /usr/local/bin/edgedriver
+        if [[ "$RUNNER_OS" == "Windows" ]]; then
+          echo "Edge version:"; powershell -Command "(Get-Item (Get-Command msedge).Source).VersionInfo.ProductVersion"
+        else
+          microsoft-edge --version
+        fi
+        
 
     #Verify edge version
     - name: Check Edge and EdgeDriver versions
