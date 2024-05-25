@@ -43,17 +43,22 @@ jobs:
     - name: Install Edge and EdgeDriver
       run: |
         sudo apt-get update
-        sudo apt-get install -y software-properties-common apt-transport-https wget
+        sudo apt-get install -y software-properties-common apt-transport-https wget unzip
         wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
         sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main"
         sudo apt-get update
         sudo apt-get install -y microsoft-edge-stable
         EDGE_DRIVER_VERSION=$(curl -s https://msedgedriver.azureedge.net/LATEST_RELEASE)
-        wget https://msedgedriver.azureedge.net/${EDGE_DRIVER_VERSION}/edgedriver_linux64.zip
-        sudo apt-get install unzip
+        wget https://msedgedriver.azureedge.net/${EDGE_DRIVER_VERSION}/edgedriver_linux64.zip -O edgedriver_linux64.zip
         unzip edgedriver_linux64.zip -d /usr/local/bin/
         rm edgedriver_linux64.zip
         sudo mv /usr/local/bin/msedgedriver /usr/local/bin/edgedriver
+
+    #Verify edge version
+    - name: Check Edge and EdgeDriver versions
+      run: |
+        microsoft-edge --version
+        edgedriver --version
 
     # Run Gradle tests
     - name: Run Tests with Gradle

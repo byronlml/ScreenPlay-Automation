@@ -4,7 +4,7 @@ Feature: Create subscription
   Scenario: Free trial subscription
     Given The "user" is in the package subscription section
     When Select the Free trial package
-    And Fill in the basic information "Bayron", "Alexis", "byrtlioalexo@gmail.com", "3665874444"
+    And Fill in the basic information "Bayron", "Alexis", "byrtlioalexllo@gmail.com", "3665874444"
     And Click on next button
     And Fill in the company information
     And Click on second next button
