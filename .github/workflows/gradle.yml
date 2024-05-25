@@ -43,7 +43,17 @@ jobs:
     - name: Run Tests with Gradle
       run: ./gradlew test
 
-    # Run Gradle tests using the pre-built Docker image
+    # Clear Gradle dependency cache
+    - name: Clear dependency cache
+      run: rm -rf ~/.gradle/caches
+
+
+    # Install Gradle dependencies
+    - name: Install dependencies
+      run: ./gradlew dependencies
+
+
+      # Run Gradle tests using the pre-built Docker image
     #- name: Run Tests with Gradle (Edge Docker)
      # run: docker pull selenium/edge-chromium:latest && docker run -d -p 4444:4444 selenium/edge-chromium:latest && ./gradlew test
 
