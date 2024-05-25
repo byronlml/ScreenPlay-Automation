@@ -31,7 +31,7 @@ jobs:
     # Configure Gradle for optimal use in GitHub Actions, including caching of downloaded dependencies.
     # See: https://github.com/gradle/actions/blob/main/setup-gradle/README.md
     - name: Setup Gradle
-      uses: gradle/actions/setup-gradle@417ae3ccd767c252f5661f1ace9f835f9654f2b5 # v3.1.0
+      uses: gradle/actions/dependency-submission@v3.1.0
       with:
          gradle-version: '8.4'
 
@@ -48,8 +48,10 @@ jobs:
         sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main"
         sudo apt-get update
         sudo apt-get install -y microsoft-edge-stable
-        EDGE_DRIVER_VERSION=$(curl -s https://msedgedriver.azureedge.net/LATEST_RELEASE)
-        wget https://msedgedriver.azureedge.net/${EDGE_DRIVER_VERSION}/edgedriver_linux64.zip -O edgedriver_linux64.zip
+        EDGE_VERSION=$(microsoft-edge --version | grep -oP '\d+\.\d+\.\d+\.\d+')
+        echo "Installed Edge version: $EDGE_VERSION"
+        EDGE_DRIVER_VERSION=$(curl -s "https://msedgedriver.azureedge.net/LATEST_RELEASE_${EDGE_VERSION%.*}")
+        wget "https://msedgedriver.azureedge.net/${EDGE_DRIVER_VERSION}/edgedriver_linux64.zip" -O edgedriver_linux64.zip
         unzip edgedriver_linux64.zip -d /usr/local/bin/
         rm edgedriver_linux64.zip
         sudo mv /usr/local/bin/msedgedriver /usr/local/bin/edgedriver
@@ -93,4 +95,4 @@ jobs:
         distribution: 'temurin'
 
     - name: Generate and submit dependency graph
-      uses: gradle/actions/dependency-submission@417ae3ccd767c252f5661f1ace9f835f9654f2b5 # v3.1.0
+      uses: gradle/actions/dependency-submission@v3.1.0
