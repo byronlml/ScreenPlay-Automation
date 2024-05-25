@@ -44,3 +44,13 @@ Wsrc/main/java/co/com/screenplay/project/tasks/FunctionSuccessfullySubscriptionT
 Qsrc/main/java/co/com/screenplay/project/tasks/FunctionValidateNextButtonTask.java,3\1\310f015be655e1978e9c83dca1299e530759a497
 †
 Vsrc/main/java/co/com/screenplay/project/tasks/FunctionNextCompanySubscriptionTask.java,6\c\6c84d8e85abb29f80fb0cf8fefe0b3ecac8d99b3
+S
+#src/test/resources/logback-test.xml,1\e\1ed7d9f38cb28fab5fedaa18ebddcc542ac558d7
+a
+1src/test/resources/features/subscriptions.feature,9\b\9b4ba1306427b817f6a0ac675564d861ff77d00a
+;
+gradlew.bat,2\a\2a45a911a8f1836b0b6c5b758962572012d8f8c3
+X
+(gradle/wrapper/gradle-wrapper.properties,f\b\fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
+L
+.github/workflows/gradle.yml,c\3\c36c878e4a824e41b1b476ece36b9a80ca94ffec
