@@ -39,9 +39,13 @@ jobs:
     - name: Grant execute permissions
       run: chmod +x gradlew
 
+    # Run Gradle tests
+    - name: Run Tests with Gradle
+      run: ./gradlew test
+
     # Run Gradle tests using the pre-built Docker image
-    - name: Run Tests with Gradle (Edge Docker)
-      run: docker pull selenium/edge-chromium:latest && docker run -d -p 4444:4444 selenium/edge-chromium:latest && ./gradlew test
+    #- name: Run Tests with Gradle (Edge Docker)
+     # run: docker pull selenium/edge-chromium:latest && docker run -d -p 4444:4444 selenium/edge-chromium:latest && ./gradlew test
 
   dependency-submission:
 
