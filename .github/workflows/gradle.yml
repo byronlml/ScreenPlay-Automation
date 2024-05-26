@@ -17,8 +17,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
 
     steps:
     - uses: actions/checkout@v4
@@ -52,13 +50,6 @@ jobs:
         else
           microsoft-edge --version
         fi
-        
-
-    #Verify edge version
-    - name: Check Edge and EdgeDriver versions
-      run: |
-        microsoft-edge --version
-        edgedriver --version
 
     # Run Gradle tests
     - name: Run Tests with Gradle
@@ -72,8 +63,3 @@ jobs:
     # Install Gradle dependencies
     - name: Install dependencies
       run: ./gradlew dependencies
-
-
-      # Run Gradle tests using the pre-built Docker image
-    #- name: Run Tests with Gradle (Edge Docker)
-     # run: docker pull selenium/edge-chromium:latest && docker run -d -p 4444:4444 selenium/edge-chromium:latest && ./gradlew test
